@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: telegram-dice-bot
+    env: python
+    region: ohio
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: "8519041982:AAG9y3iaC9S9nk2bOo5rkI1-OMcXgsavG2o"
+        sync: false
+      - key: ADMIN_ID
+        value: "6667062973"
+        sync: false
+      - key: PORT
+        value: "10000"
